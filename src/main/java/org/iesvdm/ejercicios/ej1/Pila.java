@@ -5,12 +5,10 @@ import java.util.List;
 
 public class Pila {
 
-    private List<Integer> pila = new LinkedList<>();
+    private final List<Integer> pila = new LinkedList<>();
 
     public void estaVacia() {
-        boolean estaVacia = false;
         if (pila.isEmpty()) {
-            estaVacia = true;
             System.out.println("\nPila vacia -> " + true);
         } else {
             System.out.println("\nPila no vacia -> " + false);
@@ -30,9 +28,7 @@ public class Pila {
 
         List<Integer> aux = new LinkedList<>();
         aux.add(valor);
-        for (int i = 0; i < pila.size(); i++) {
-            aux.add(pila.get(i));
-        }
+        aux.addAll(pila);
         pila.clear();
         pila.addAll(aux);
 
@@ -41,11 +37,11 @@ public class Pila {
     }
 
     public String toString() {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < pila.size(); i++) {
-            result += String.valueOf(pila.get(i));
+            result.append(pila.get(i));
             if (i!= pila.size() - 1) {
-                result += ", ";
+                result.append(", ");
             }
         }
         System.out.println("\nImprimiendo resultado como cadena ... ");
