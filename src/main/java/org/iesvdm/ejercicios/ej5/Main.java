@@ -6,7 +6,7 @@ public class Main {
 
         Coleccion<T> c = new Coleccion<>();
         c.estaVacia();
-
+        // Poner el resto de metodos y un menu;
 
     }
 

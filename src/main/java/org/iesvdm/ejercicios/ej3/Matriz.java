@@ -43,8 +43,8 @@ public class Matriz<T> {
         System.out.println("\nSe ha introducido el valor " + c + " en la posición " + i + " - " + j + " de la matriz.");
     }
 
-    public void get(int i, int j) {
-        System.out.println("\nEl valor en esa posición de la matriz es " + matriz[i][j]);
+    public String get(int i, int j) {
+        return "\nEl valor en esa posición de la matriz es " + matriz[i][j];
     }
 
     public void columnas() {
@@ -55,8 +55,8 @@ public class Matriz<T> {
         System.out.println("\nNúmero de columnas: " + nRows);
     }
 
-    public void imprimir() {
-        System.out.println("\n  Imprimiendo matriz ... \n----------------------------");
+    public boolean imprimir() {
+        System.out.println("\nImprimiendo matriz ... \n----------------------------");
         for (T[] ts : matriz) {
             for (T t : ts) {
                 System.out.print(t + "  ");
@@ -64,6 +64,7 @@ public class Matriz<T> {
             System.out.println();  // Nueva línea después de cada fila
         }
         System.out.println("----------------------------");
+        return false;
     }
 
     @Override
