@@ -56,7 +56,7 @@ public class Matriz<T> {
     }
 
     public void imprimir() {
-        System.out.println("\nImprimiendo matriz ... \n----------------------------");
+        System.out.println("\n  Imprimiendo matriz ... \n----------------------------");
         for (T[] ts : matriz) {
             for (T t : ts) {
                 System.out.print(t + "  ");
