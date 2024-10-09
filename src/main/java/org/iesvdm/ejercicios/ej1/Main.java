@@ -4,21 +4,35 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static <T> void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        Pila p = new Pila();
+        Pila<T> p = new Pila<>();
 
         message();
         int opcion = sc.nextInt();
+
+        System.out.println("\n¿Que valor vas a introducir?\n1. Cadena\n2. Enteros\n3. Decimales");
+        int opcionTipoPila = sc.nextInt();
+        T valor;
 
         while (opcion != 5) {
             switch (opcion) {
                 case 1:
                     System.out.println("\nIntroduce el valor que quieres añadir: ");
-                    int value = sc.nextInt();
-                    p.aniadir(value);
+                    if (opcionTipoPila == 1) {
+                        valor = (T) sc.next();
+                        p.aniadir(valor);
+                    } else if (opcionTipoPila == 2) {
+                        Integer var1 = sc.nextInt();
+                        valor = (T) var1;
+                        p.aniadir(valor);
+                    } else {
+                        Double var2 = sc.nextDouble();
+                        valor = (T) var2;
+                        p.aniadir(valor);
+                    }
                     message();
                     opcion = sc.nextInt();
                     break;
@@ -45,7 +59,7 @@ public class Main {
     }
 
     static void message() {
-        System.out.println("\nIntroduce una opción:\n1. Añadir valor\n2. Primer valor\n3. Extraer Valor\n4. Comprobar si está vacía.\n5. Imprimir");
+        System.out.println("\nIntroduce una opción:\n1. Añadir valor\n2. Primer valor\n3. Extraer Valor\n4. Comprobar si está vacía\n5. Imprimir");
     }
 
 }

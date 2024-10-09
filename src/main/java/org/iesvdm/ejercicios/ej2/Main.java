@@ -10,6 +10,10 @@ public class Main {
 
         PilaArray<T> p = new PilaArray<>();
 
+        System.out.println("\nIngrese la longitud del array: ");
+        int longArray = sc.nextInt();
+        p.inicio(longArray);
+
         message();
         int opcion = sc.nextInt();
 
@@ -53,13 +57,13 @@ public class Main {
                     break;
             }
         }
-
+        p.contarElementosInsertados();
         System.out.println(p);
         sc.close();
     }
 
     static void message() {
-        System.out.println("\nIntroduce una opción:\n1. Añadir valor\n2. Primer valor\n3. Extraer Valor\n4. Comprobar si está vacía.\n5. Imprimir");
+        System.out.println("\nIntroduce una opción:\n1. Añadir valor\n2. Primer valor\n3. Extraer Valor\n4. Comprobar si está vacía\n5. Imprimir");
     }
 
 }

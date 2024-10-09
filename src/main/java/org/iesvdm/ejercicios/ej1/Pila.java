@@ -1,11 +1,12 @@
 package org.iesvdm.ejercicios.ej1;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Pila {
+public class Pila<T> {
 
-    private final List<Integer> pila = new LinkedList<>();
+    private final List<T> pila = new LinkedList<>();
 
     public void estaVacia() {
         if (pila.isEmpty()) {
@@ -24,9 +25,9 @@ public class Pila {
 
     public void primero() {System.out.println("\nPrimer Elemento: " + pila.getFirst());}
 
-    public void aniadir(int valor) {
+    public void aniadir(T valor) {
 
-        List<Integer> aux = new LinkedList<>();
+        List<T> aux = new LinkedList<>();
         aux.add(valor);
         aux.addAll(pila);
         pila.clear();
