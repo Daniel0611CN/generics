@@ -20,6 +20,7 @@ public class Main {
         while (opcion != 5) {
             switch (opcion) {
                 case 1:
+                    // Aquí el usuario puede introducir el valor tanto en la fila 0 como en la columna 0;
                     System.out.println("\nIntroduce el valor que quieres añadir: ");
                     if (opcionTipoPila == 1) {
                         valor = (T) sc.next();
