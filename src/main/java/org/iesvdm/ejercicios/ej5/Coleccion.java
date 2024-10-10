@@ -10,9 +10,9 @@ public class Coleccion<T> implements ColeccionSimpleGenerica {
     @Override
     public void estaVacia() {
         if (pila.isEmpty()) {
-            System.out.println("La lista esta vacia " + true);
+            System.out.println("\nLa lista esta vacia -> " + true);
         } else {
-            System.out.println("La lista no esta vacia " + false);
+            System.out.println("\nLa lista no esta vacia -> " + false);
         }
     }
 
@@ -20,11 +20,11 @@ public class Coleccion<T> implements ColeccionSimpleGenerica {
     public void extraer() {
         System.out.println(pila.getFirst());
         pila.removeFirst();
-        System.out.println(pila);
+        System.out.println("\nPila: " + pila);
     }
 
     @Override
-    public void primero() {System.out.println(pila.getFirst());}
+    public void primero() {System.out.println("\nPila: " + pila.getFirst());}
 
     @Override
     public void aniadir(Object valor) {
